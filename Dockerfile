@@ -9,6 +9,6 @@ RUN apt-get update && \
     rm chef-server-core_12.17.33-1_amd64.deb*.deb && \
     apt-get remove -y wget && \
     rm -rf /var/lib/apt/lists/*
-COPY run.sh configure_chef.sh /usr/local/bin/
+COPY main.sh chef.sh /usr/local/bin/
 VOLUME /var/log
 CMD ["main.sh"]
