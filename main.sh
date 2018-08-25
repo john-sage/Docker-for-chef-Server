@@ -8,6 +8,6 @@ if [ -f "/root/chef_configured" ]
     chef-server-ctl status
   else
     echo -e "\nNew install of Chef-Server!"
-    /usr/local/bin/configure_chef.sh
+    /usr/local/bin/chef.sh
 fi
 tail -F /opt/opscode/embedded/service/*/log/current
