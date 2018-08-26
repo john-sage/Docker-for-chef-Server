@@ -16,7 +16,7 @@ else
 fi
 
 echo -e "\nRunning: 'chef-server-ctl reconfigure'. This step will take a few minutes..."
-export PATH=/opt/opscode/bin:/opt/opscode/bin/embedded:$PATH
+#export PATH=/opt/opscode/bin:/opt/opscode/bin/embedded/
 /opt/opscode/embedded/bin/runsvdir-start &
 chef-server-ctl reconfigure
 
