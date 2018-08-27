@@ -9,6 +9,8 @@ RUN apt-get update && \
     rm chef-server*.deb && \
     apt-get remove -y wget && \
     rm -rf /var/lib/apt/lists/*
+RUN dpkg-divert --local --rename --add /sbin/initctl
+RUN ln -sf /bin/true /sbin/initctl
 COPY main.sh chef.sh /usr/local/bin/
 VOLUME /var/log
 CMD ["main.sh"]
