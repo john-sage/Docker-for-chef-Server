@@ -12,5 +12,5 @@ RUN apt-get update && \
 RUN dpkg-divert --local --rename --add /sbin/initctl
 RUN ln -sf /bin/true /sbin/initctl
 COPY main.sh chef.sh /usr/local/bin/
-VOLUME /var/log
+VOLUME /var/log #This will add it to your docker
 CMD ["main.sh"]
